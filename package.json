@@ -1,0 +1,31 @@
+{
+  "name": "ev2",
+  "author": "Rafael Mora",
+  "version": "0.0.1",
+  "description": "Proyecto base - clase: API avanzada",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "migrate": "node migrations/migrate.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.21.0"
+  },
+  "keywords": []
+}

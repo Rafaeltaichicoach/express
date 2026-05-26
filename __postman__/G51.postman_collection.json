@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "4bbb6894-c748-4cf0-aaf4-be996e26796e",
+		"name": "G51",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15965395"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "/clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/clientes",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/clientes/:id (Search)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/clientes/1",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/clientes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const medicamentos = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable('nuevo_clientes_id', clientes.message.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"factor x\",\n    \"precio\": 10,\n    \"stock\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/clientes",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/clientes/:id (New)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/clientes/{{nuevo_clientes_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"clientes",
+								"{{nuevo_clientes_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/clientes/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"factor x\",\n    \"precio\": 10,\n    \"stock\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/clientes/{{nuevo_medicamentos_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"clientes",
+								"{{nuevo_clientes_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/clientes/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/clientes/{{nuevo_clientes_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"clientes",
+								"{{nuevo_clientes_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "/productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/productos",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/productos/:id (Search)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/productos/1",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"productos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/productos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const personal = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable('nuevo_personal_id', personal.message.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Rafael Mora S\",\n    \"rol\": \"administrador\",\n    \"salario\": 1000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/productos",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/productos/:id (New)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/productos/{{nuevo_productos_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"productos",
+								"{{nuevo_productos_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/productos/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Rafael mora S\",\n    \"rol\": \"administrador\",\n    \"salario\": 9000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/productos/{{nuevo_productos_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"productos",
+								"{{nuevo_productos_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/productos/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/productos/{{nuevo_productos_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"productos",
+								"{{nuevo_productos_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Errors",
+			"item": [
+				{
+					"name": "404",
+					"item": [
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

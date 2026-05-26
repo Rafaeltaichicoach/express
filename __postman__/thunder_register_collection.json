@@ -1,0 +1,16 @@
+{
+  "requests": [
+    {
+      "name": "Register user",
+      "method": "POST",
+      "url": "http://localhost:3000/register",
+      "headers": [
+        { "key": "Content-Type", "value": "application/json" }
+      ],
+      "body": {
+        "mode": "raw",
+        "raw": "{\n  \"id\": 1,\n  \"username\": \"nuevoUsuario\",\n  \"pass\": \"MiClaveSegura123\"\n}"
+      }
+    }
+  ]
+}
